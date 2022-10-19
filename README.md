@@ -1,2 +1,2 @@
 # WinscapeShortcutManager
-A rewrite of the "Inkscape shortcut manager" by ![Gilles Castel](https://github.com/gillescastel/inkscape-shortcut-manager)
+A rewrite of the "Inkscape shortcut manager" by [Gilles Castel](https://github.com/gillescastel/inkscape-shortcut-manager), using the same structure and *key chords* he defined in his [blog](https://castel.dev/post/lecture-notes-2/).
