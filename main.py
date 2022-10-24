@@ -7,6 +7,7 @@ import subprocess
 from listener import Listener
 import threading
 import logging
+import sys
 
 global total_windows
 total_windows = []
@@ -32,10 +33,10 @@ def create_window():
 
     
 def m():
-    Listener.basic_hotkeys(create_window)
-    print("a")
+    Listener.basic_hotkeys({'<shift>+<ctrl>+a':create_window})
 
 # asyncio.run(main())
+os.chdir(sys.argv[1])
 m()
 
 
