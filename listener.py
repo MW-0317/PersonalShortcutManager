@@ -5,14 +5,13 @@ from itertools import combinations
 from logging.config import listen
 from math import comb
 from pynput import keyboard
+import threading
 
 class Listener:
     combs=set([])
     prev_combs=set([])
     def __init__(self):
-       self.listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release) 
-       self.listener.start()
-       self.listener.join()
+       self.listener = keyboard.Listener(on_press=self.on_press, on_release=self.on_release)
 
     def on_press(self, key):
         if key == keyboard.Key.esc:
@@ -32,5 +31,11 @@ class Listener:
         except:
             k = key.name
         self.combs.remove(k)
+    
+    def begin(self):
+        self.listener.start()
+        self.listener.join()
 
-Listener()
+l = Listener()
+
+threading.Thread(target=l.begin())
