@@ -87,4 +87,4 @@ if __name__ == "__main__":
     # l.begin()
     # asyncio.run(l.begin())
 
-    Listener.basic_hotkeys(test)
+    Listener.basic_hotkeys({})

@@ -12,19 +12,15 @@ import sys
 global total_windows
 total_windows = []
 
-def text_thing(text):
+def inkscape_open(text):
     print("Text:", text)
     # os.startfile(text)
-    subprocess.run(["C:/Program Files/Inkscape/bin/inkscape.exe", text])
-
-async def main():
-    w = WindowManager((300, 150), text_thing)
-    asyncio.create_task(w.create())
+    subprocess.run(["inkscape.exe", text])
 
 def create_window():
     logging.info("Creating Window")
     # print("AAA")
-    w = WindowManager((300, 150), text_thing)
+    w = WindowManager((300, 150), inkscape_open)
     # w.create()
     # total_windows.append(w)
     # print(total_windows)
